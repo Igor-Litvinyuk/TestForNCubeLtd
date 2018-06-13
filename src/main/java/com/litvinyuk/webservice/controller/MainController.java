@@ -61,7 +61,7 @@ public class MainController {
         return "main";
     }
 
-    @PostMapping("idFilter")
+    @PostMapping("deletePerson")
     public String deletePerson(@RequestParam Long idFilter, Map<String, Object> model){
         Iterable<Person> contacts;
         if(idFilter != null && !idFilter.toString().isEmpty() && personRepository.findById(idFilter).isPresent()){
@@ -72,6 +72,6 @@ public class MainController {
             contacts = personRepository.findAll();
         }
         model.put("contacts", contacts);
-        return "main";
+        return "redirect:/main";
     }
 }

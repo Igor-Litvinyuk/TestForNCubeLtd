@@ -12,7 +12,7 @@
 </div><br/>
 
 <div>
-    <form method="post" action="idFilter">
+    <form method="post" action="/deletePerson">
         <input type="number" name="idFilter">
         <button type="submit">Delete person by id</button>
     </form>
