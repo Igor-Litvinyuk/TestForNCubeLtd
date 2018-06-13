@@ -36,6 +36,7 @@
     <span>${person.firstName}</span>
     <span>${person.lastName}</span>
     <span>${person.dateOfBirth}</span>
+    <span>${person.postalCode}</span>
     <div>
         <#if person.filename??>
             <img src="/img/${person.filename}">

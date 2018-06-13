@@ -3,7 +3,6 @@ package com.litvinyuk.webservice.model;
 import javax.persistence.*;
 
 @Entity
-@Table(name = "contacts")
 public class Person {
 
     @Id
