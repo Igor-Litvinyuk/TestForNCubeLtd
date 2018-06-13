@@ -1,0 +1,26 @@
+<html>
+<body>
+<div>
+    <form method="post" enctype="multipart/form-data">
+        <input type="text" name="firstName" placeholder="Enter firstName" />
+        <input type="text" name="lastName" placeholder="Enter lastName" />
+        <input type="text" name="dateOfBirth" placeholder="Enter dateOfBirth" />
+        <input type="text" name="postalCode" placeholder="Enter postalCode" />
+        <input type="text" name="picture" placeholder="Enter picture" />
+        <button type="submit">Add contact</button>
+    </form>
+</div>
+<div>Contacts list:</div>
+{{#contacts}}
+    <div>
+        <b>{{id}}</b>
+        <span>{{firstName}}</span>
+        <span>{{lastName}}</span>
+        <span>{{dateOfBirth}}</span>
+        <span>{{postalCode}}</span>
+        <span>{{picture}}</span>
+    </div>
+{{/contacts}}
+</body>
+</html>
+
