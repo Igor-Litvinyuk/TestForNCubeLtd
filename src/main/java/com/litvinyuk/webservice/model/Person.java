@@ -1,4 +1,6 @@
 package com.litvinyuk.webservice.model;
+import org.springframework.web.multipart.MultipartFile;
+
 import javax.persistence.*;
 
 @Entity
@@ -17,17 +19,16 @@ public class Person {
 
     private String postalCode;
 
-    private String picture;
+    private String filename;
 
     public Person() {
     }
 
-    public Person(String firstName, String lastName, String dateOfBirth, String postalCode, String picture) {
+    public Person(String firstName, String lastName, String dateOfBirth, String postalCode) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.dateOfBirth = dateOfBirth;
         this.postalCode = postalCode;
-        this.picture = picture;
     }
 
     public Integer getId() {
@@ -70,11 +71,11 @@ public class Person {
         this.postalCode = postalCode;
     }
 
-    public String getPicture() {
-        return picture;
+    public String getFilename() {
+        return filename;
     }
 
-    public void setPicture(String picture) {
-        this.picture = picture;
+    public void setFilename(String filename) {
+        this.filename = filename;
     }
 }

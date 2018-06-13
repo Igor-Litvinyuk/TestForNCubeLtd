@@ -2,11 +2,11 @@
 <body>
 <div>
     <form method="post" enctype="multipart/form-data">
-        <input type="text" name="firstName" placeholder="Enter firstName" />
-        <input type="text" name="lastName" placeholder="Enter lastName" />
-        <input type="text" name="dateOfBirth" placeholder="Enter dateOfBirth" />
-        <input type="text" name="postalCode" placeholder="Enter postalCode" />
-        <input type="text" name="picture" placeholder="Enter picture" />
+        <input type="text" name="firstName" placeholder="Enter firstName"/>
+        <input type="text" name="lastName" placeholder="Enter lastName"/>
+        <input type="text" name="dateOfBirth" placeholder="Enter dateOfBirth"/>
+        <input type="text" name="postalCode" placeholder="Enter postalCode"/>
+        <input type="file" name="file"/>
         <button type="submit">Add contact</button>
     </form>
 </div>
@@ -18,7 +18,6 @@
         <span>{{lastName}}</span>
         <span>{{dateOfBirth}}</span>
         <span>{{postalCode}}</span>
-        <span>{{picture}}</span>
     </div>
 {{/contacts}}
 </body>
