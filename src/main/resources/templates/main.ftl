@@ -1,5 +1,5 @@
-<html>
-<body>
+<#import "parts/common.ftl" as c>
+<@c.page>
 <div>
     <form method="post" enctype="multipart/form-data">
         <input type="text" name="firstName" placeholder="Enter firstName"/>
@@ -11,15 +11,18 @@
     </form>
 </div>
 <div>Contacts list:</div>
-{{#contacts}}
+    <#list contacts as person>
+<div>
+    <b>${person.id}</b>
+    <span>${person.firstName}</span>
+    <span>${person.lastName}</span>
+    <span>${person.dateOfBirth}</span>
     <div>
-        <b>{{id}}</b>
-        <span>{{firstName}}</span>
-        <span>{{lastName}}</span>
-        <span>{{dateOfBirth}}</span>
-        <span>{{postalCode}}</span>
+        <#if person.filename??>
+            <img src="/img/${person.filename}">
+        </#if>
     </div>
-{{/contacts}}
-</body>
-</html>
+</div>
+    </#list>
+</@c.page>
 
