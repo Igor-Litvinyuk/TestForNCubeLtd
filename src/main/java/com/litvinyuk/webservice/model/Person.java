@@ -1,5 +1,4 @@
 package com.litvinyuk.webservice.model;
-import org.springframework.web.multipart.MultipartFile;
 
 import javax.persistence.*;
 
@@ -9,7 +8,7 @@ public class Person {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer id;
+    private Long id;
 
     private String firstName;
 
@@ -31,11 +30,11 @@ public class Person {
         this.postalCode = postalCode;
     }
 
-    public Integer getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(Integer id) {
+    public void setId(Long id) {
         this.id = id;
     }
 

@@ -9,7 +9,15 @@
         <input type="file" name="file"/>
         <button type="submit">Add contact</button>
     </form>
-</div>
+</div><br/>
+
+<div>
+    <form method="post" action="idFilter">
+        <input type="number" name="idFilter">
+        <button type="submit">Delete person by id</button>
+    </form>
+</div><br/>
+
 <div>Contacts list:</div>
     <#list contacts as person>
 <div>

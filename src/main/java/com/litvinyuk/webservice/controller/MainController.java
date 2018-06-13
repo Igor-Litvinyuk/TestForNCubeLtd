@@ -60,4 +60,18 @@ public class MainController {
         model.put("contacts", contacts);
         return "main";
     }
+
+    @PostMapping("idFilter")
+    public String deletePerson(@RequestParam Long idFilter, Map<String, Object> model){
+        Iterable<Person> contacts;
+        if(idFilter != null && !idFilter.toString().isEmpty() && personRepository.findById(idFilter).isPresent()){
+            personRepository.deleteById(idFilter);
+            contacts = personRepository.findAll();
+        }
+        else {
+            contacts = personRepository.findAll();
+        }
+        model.put("contacts", contacts);
+        return "main";
+    }
 }
