@@ -13,8 +13,19 @@
 
 <div>
     <form method="post" action="/deletePerson">
-        <input type="number" name="idFilter">
+        <input type="number" name="idFilter" placeholder="Enter id">
         <button type="submit">Delete person by id</button>
+    </form>
+</div><br/>
+
+<div>
+    <form method="post" action="/updatePerson">
+        <input type="number" name="idFilter" placeholder="Enter id">
+        <input type="text" name="firstName" placeholder="Enter new firstName"/>
+        <input type="text" name="lastName" placeholder="Enter new lastName"/>
+        <input type="text" name="dateOfBirth" placeholder="Enter new dateOfBirth"/>
+        <input type="text" name="postalCode" placeholder="Enter new postalCode"/>
+        <button type="submit">Update person by id</button>
     </form>
 </div><br/>
 

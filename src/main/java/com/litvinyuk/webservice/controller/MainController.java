@@ -61,11 +61,36 @@ public class MainController {
         return "main";
     }
 
-    @PostMapping("deletePerson")
+    @PostMapping("/deletePerson")
     public String deletePerson(@RequestParam Long idFilter, Map<String, Object> model){
         Iterable<Person> contacts;
         if(idFilter != null && !idFilter.toString().isEmpty() && personRepository.findById(idFilter).isPresent()){
             personRepository.deleteById(idFilter);
+            contacts = personRepository.findAll();
+        }
+        else {
+            contacts = personRepository.findAll();
+        }
+        model.put("contacts", contacts);
+        return "redirect:/main";
+    }
+
+    @PostMapping("/updatePerson")
+    public String updatePerson(@RequestParam Long idFilter, @RequestParam String firstName,
+                               @RequestParam String lastName, @RequestParam String dateOfBirth,
+                               @RequestParam String postalCode, Map<String, Object> model){
+        Iterable<Person> contacts;
+        if(idFilter != null && !idFilter.toString().isEmpty() && personRepository.findById(idFilter).isPresent()){
+            contacts = personRepository.findAll();
+            for (Person somePerson : contacts){
+                if (somePerson.getId().equals(idFilter)){
+                    somePerson.setFirstName(firstName);
+                    somePerson.setLastName(lastName);
+                    somePerson.setDateOfBirth(dateOfBirth);
+                    somePerson.setPostalCode(postalCode);
+                    personRepository.save(somePerson);
+                }
+            }
             contacts = personRepository.findAll();
         }
         else {
