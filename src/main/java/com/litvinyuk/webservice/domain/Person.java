@@ -3,6 +3,7 @@ package com.litvinyuk.webservice.domain;
 import javax.persistence.*;
 
 @Entity
+@Table(name = "persons")
 public class Person {
 
     @Id
