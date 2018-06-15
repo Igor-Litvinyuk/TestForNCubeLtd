@@ -1,4 +1,4 @@
-package com.litvinyuk.webservice.model;
+package com.litvinyuk.webservice.domain;
 
 import javax.persistence.*;
 

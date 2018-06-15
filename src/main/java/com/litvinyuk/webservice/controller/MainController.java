@@ -1,6 +1,6 @@
 package com.litvinyuk.webservice.controller;
 
-import com.litvinyuk.webservice.model.Person;
+import com.litvinyuk.webservice.domain.Person;
 import com.litvinyuk.webservice.repository.PersonRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
